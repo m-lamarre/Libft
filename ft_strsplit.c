@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 15:45:28 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/05/28 13:16:13 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 17:14:39 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/30 17:14:41 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,12 @@ static char		*ft_dup(char const *s, char c)
 	while (s[n] && s[n] != c)
 		n++;
 	word = (char *)malloc(sizeof(char) * n + 1);
-	i = -1;
-	while (++i < n)
+	i = 0;
+	while (i < n)
+	{
 		word[i] = s[i];
+		i++;
+	}
 	word[i] = '\0';
 	return (word);
 }
@@ -57,16 +60,16 @@ char			**ft_strsplit(char const *s, char c)
 	n = ft_words(s, c);
 	if (!s || !(str = (char **)malloc(sizeof(char *) * n + 1)))
 		return (NULL);
-	i = -1;
+	i = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
 			s++;
 		if (*s && *s != c)
-			str[++i] = ft_dup(s, c);
+			str[i++] = ft_dup(s, c);
 		while (*s && *s != c)
 			s++;
 	}
-	str[++i] = NULL;
+	str[i++] = NULL;
 	return (str);
 }

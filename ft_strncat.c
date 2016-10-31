@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 15:07:02 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/05/11 09:56:51 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 17:12:02 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/30 17:12:05 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char	*a;
+	char	*str;
 
-	a = s1;
-	while (*a != '\0')
-		a++;
+	str = s1;
+	while (*str != '\0')
+		str++;
 	while (*s2 != '\0' && n > 0)
 	{
-		*a = *s2;
-		a++;
+		*str = *s2;
+		str++;
 		s2++;
 		n--;
 	}
-	*a = '\0';
+	*str = '\0';
 	return (s1);
 }

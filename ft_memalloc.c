@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 15:45:28 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/06/05 15:45:03 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 15:27:58 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/30 15:28:00 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*a;
+	void	*tmp;
 
-	a = (void *)malloc(size);
-	if (a == NULL)
+	tmp = (void *)malloc(size);
+	if (tmp == NULL)
 		return (NULL);
-	ft_bzero(a, size);
-	return (a);
+	ft_bzero(tmp, size);
+	return (tmp);
 }

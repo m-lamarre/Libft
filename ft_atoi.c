@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 12:10:41 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/07/16 13:38:19 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 12:37:35 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/30 13:48:54 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 int		ft_atoi(const char *str)
 {
-	int		i;
+	int		ans;
 	int		n;
 
-	i = 0;
+	ans = 0;
 	while ((*str >= '\t' && *str <= '\r') || *str == 32)
 		str++;
 	if (*str == '-')
 		n = -1;
 	else
 		n = 1;
-	if (*str == '+' || *str == '-')
+	if (*str == '-' || *str == '+')
 		str++;
 	while (*str && ft_isdigit(*str))
-		i = (i * 10) + (*str++ - '0');
-	return (i * n);
+	{
+		ans = (ans * 10) + (*str - '0');
+		str++;
+	}
+	return (ans * n);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 15:54:42 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/05/13 10:20:16 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 17:14:20 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/31 10:24:42 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	while (s[i] != (char)c && i >= 0)
+	while (i >= 0 && s[i] != (char)c)
 		i--;
 	if (s[i] != (char)c)
 		return (0);

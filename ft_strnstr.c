@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 15:07:23 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/05/28 13:13:05 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 17:13:25 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/30 17:13:28 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int		i;
-	int		k;
-	int		s;
+	int		l;
+	int		b;
 
 	if (*little == '\0')
 		return ((char *)(big));
@@ -25,14 +25,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		if (len < ft_strlen(little))
 			return (NULL);
-		k = 0;
-		s = i;
-		while (big[s] == little[k] && little[k] && big[s])
+		l = 0;
+		b = i;
+		while (big[b] == little[l] && little[l] && big[b])
 		{
-			k++;
-			s++;
+			l++;
+			b++;
 		}
-		if (little[k] == '\0')
+		if (little[l] == '\0')
 			return ((char *)big + i);
 		len--;
 		i++;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 15:45:28 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/06/05 15:48:14 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 17:11:25 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/30 17:11:26 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	size_t	i;
-	char	*a;
+	char	*str;
 
 	if (!s || !f)
 		return (NULL);
-	a = ft_strdup(s);
-	if (a == NULL)
+	str = ft_strdup(s);
+	if (str == NULL)
 		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
-		a[i] = f(a[i]);
+		str[i] = f(str[i]);
 		i++;
 	}
-	return (a);
+	return (str);
 }

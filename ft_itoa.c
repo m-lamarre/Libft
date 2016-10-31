@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 15:45:28 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/06/05 15:53:38 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 15:22:33 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/31 10:34:33 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static size_t	ft_count(long n)
 	while (n >= 10)
 	{
 		i++;
-		n /= 10;
+		n = n / 10;
 	}
 	return (i);
 }
@@ -30,14 +30,14 @@ static size_t	ft_count(long n)
 char			*ft_itoa(int n)
 {
 	long	i;
-	size_t	count;
+	size_t	j;
 	char	*str;
 	char	neg;
 
 	i = n;
 	neg = (i < 0 ? 1 : 0);
-	count = ft_count(i);
-	str = ft_strnew(count + neg);
+	j = ft_count(i);
+	str = ft_strnew(j + neg);
 	if (str == NULL)
 		return (NULL);
 	if (neg)
@@ -45,10 +45,10 @@ char			*ft_itoa(int n)
 		i = -i;
 		str[0] = '-';
 	}
-	while (count > 0)
+	while (j > 0)
 	{
-		str[count + neg - 1] = (i % 10) + '0';
-		count--;
+		str[j + neg - 1] = (i % 10) + '0';
+		j--;
 		i = i / 10;
 	}
 	return (str);

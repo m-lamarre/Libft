@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/09 14:21:37 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/06/30 12:38:26 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 13:52:33 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/31 10:36:44 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*c;
-	size_t			i;
+	unsigned char *tmp;
 
-	i = 0;
-	c = (unsigned char *)s;
-	while (i < n && n > 0)
+	tmp = (unsigned char *)s;
+	while (n-- != 0)
 	{
-		c[i] = 0;
-		i++;
+		*tmp = 0;
+		tmp++;
 	}
 }

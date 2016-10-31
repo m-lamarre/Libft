@@ -5,16 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/13 15:37:53 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/06/14 13:45:36 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/31 13:27:46 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/31 13:28:23 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_abs(int i)
+int		ft_abs(int n)
 {
-	if (i < 0)
-		return (-i);
-	return (i);
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
 }
+

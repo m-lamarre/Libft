@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/05/13 13:46:50 by mlamarre          #+#    #+#              #
-#    Updated: 2016/07/16 13:33:36 by mlamarre         ###   ########.fr        #
+#    Created: 2016/10/30 12:46:14 by mlamarre          #+#    #+#              #
+#    Updated: 2016/10/31 11:42:34 by mlamarre         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME =	libft.a
 
-SRCS =	ft_abs.c \
-		ft_atoi.c \
+SRCS =	ft_atoi.c \
+		ft_abs.c \
 		ft_bzero.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
@@ -23,10 +23,10 @@ SRCS =	ft_abs.c \
 		ft_iswhitespace.c \
 		ft_itoa.c \
 		ft_memalloc.c \
+		ft_memcpy.c \
 		ft_memccpy.c \
 		ft_memchr.c \
 		ft_memcmp.c \
-		ft_memcpy.c \
 		ft_memdel.c \
 		ft_memmove.c \
 		ft_memset.c \
@@ -39,37 +39,36 @@ SRCS =	ft_abs.c \
 		ft_putstr.c \
 		ft_putstr_fd.c \
 		ft_strcat.c \
+		ft_strlcat.c \
+		ft_strncat.c \
 		ft_strchr.c \
+		ft_strrchr.c \
 		ft_strclr.c \
 		ft_strcmp.c \
+		ft_strncmp.c \
 		ft_strcpy.c \
+		ft_strncpy.c \
 		ft_strdel.c \
 		ft_strdup.c \
 		ft_strequ.c \
+		ft_strnequ.c\
 		ft_striter.c \
 		ft_striteri.c \
 		ft_strjoin.c \
-		ft_strlcat.c \
 		ft_strlen.c \
 		ft_strmap.c \
 		ft_strmapi.c \
-		ft_strmerge.c \
-		ft_strncat.c \
-		ft_strncmp.c \
-		ft_strncpy.c \
-		ft_strnequ.c \
 		ft_strnew.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
 		ft_strsplit.c \
 		ft_strstr.c \
+		ft_strnstr.c \
 		ft_strsub.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
 
-OBJS =	ft_abs.o \
-		ft_atoi.o \
+OBJS =	ft_atoi.o \
+		ft_abs.o \
 		ft_bzero.o \
 		ft_isalnum.o \
 		ft_isalpha.o \
@@ -79,10 +78,10 @@ OBJS =	ft_abs.o \
 		ft_iswhitespace.o \
 		ft_itoa.o \
 		ft_memalloc.o \
+		ft_memcpy.o \
 		ft_memccpy.o \
 		ft_memchr.o \
 		ft_memcmp.o \
-		ft_memcpy.o \
 		ft_memdel.o \
 		ft_memmove.o \
 		ft_memset.o \
@@ -95,38 +94,37 @@ OBJS =	ft_abs.o \
 		ft_putstr.o \
 		ft_putstr_fd.o \
 		ft_strcat.o \
+		ft_strlcat.o \
+		ft_strncat.o \
 		ft_strchr.o \
+		ft_strrchr.o \
 		ft_strclr.o \
 		ft_strcmp.o \
+		ft_strncmp.o \
 		ft_strcpy.o \
+		ft_strncpy.o \
 		ft_strdel.o \
 		ft_strdup.o \
 		ft_strequ.o \
+		ft_strnequ.o\
 		ft_striter.o \
 		ft_striteri.o \
 		ft_strjoin.o \
-		ft_strlcat.o \
 		ft_strlen.o \
 		ft_strmap.o \
 		ft_strmapi.o \
-		ft_strmerge.o \
-		ft_strncat.o \
-		ft_strncmp.o \
-		ft_strncpy.o \
-		ft_strnequ.o \
 		ft_strnew.o \
-		ft_strnstr.o \
-		ft_strrchr.o \
 		ft_strsplit.o \
 		ft_strstr.o \
+		ft_strnstr.o \
 		ft_strsub.o \
 		ft_strtrim.o \
 		ft_tolower.o \
 		ft_toupper.o \
 
-HEAD = libft.h
+HEAD =	libft.h
 
-all: $(NAME)
+all:	$(NAME)
 
 $(NAME):
 		gcc -c -Wall -Werror -Wextra $(SRCS)
@@ -136,7 +134,10 @@ $(NAME):
 clean:
 		rm -f $(OBJS)
 
-fclean: clean
+fclean:	clean
 		rm -f $(NAME)
 
-re: fclean all
+re:		fclean all
+
+.PHONY: clean
+	  	rm -rf $(OBJS)

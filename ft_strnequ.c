@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlamarre <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/10 15:45:28 by mlamarre          #+#    #+#             */
-/*   Updated: 2016/05/17 11:14:58 by mlamarre         ###   ########.fr       */
+/*   Created: 2016/10/30 17:12:58 by mlamarre          #+#    #+#             */
+/*   Updated: 2016/10/31 10:24:29 by mlamarre         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	return (1);
+	if (ft_strncmp(s1, s2, n) != 0)
+		return (0);
+	else
+		return (1);
 }
