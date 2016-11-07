@@ -12,25 +12,6 @@
 
 #include "libft.h"
 
-static int		ft_words(char const *s, char c)
-{
-	int		i;
-
-	i = 0;
-	while (*s)
-	{
-		while (*s && *s == c)
-			s++;
-		if (*s && *s != c)
-		{
-			i++;
-			while (*s && *s != c)
-				s++;
-		}
-	}
-	return (i);
-}
-
 static char		*ft_dup(char const *s, char c)
 {
 	char	*word;
@@ -49,6 +30,25 @@ static char		*ft_dup(char const *s, char c)
 	}
 	word[i] = '\0';
 	return (word);
+}
+
+static int		ft_words(char const *s, char c)
+{
+	int		i;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
+		{
+			i++;
+			while (*s && *s != c)
+				s++;
+		}
+	}
+	return (i);
 }
 
 char			**ft_strsplit(char const *s, char c)

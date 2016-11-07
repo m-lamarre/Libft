@@ -60,7 +60,7 @@ void	ft_putstr(char *s);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_strclr(char *s);
 void	ft_strdel(char **as);
-int		*ft_strequ(char const *s1, char const *s2);
+int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
